@@ -231,7 +231,7 @@ async def add_start(message: Message):
     clear_draft(uid)
     states[uid] = {"step": "description"}
     await ask_next(message, "📝 <b>Message Description</b> পাঠান।\n\n"
-                            "Telegram থেকে custom/premium emoji সহ description পাঠাতে পারবেন।")
+                            "Telegram থেকে image/video সহ description পাঠাতে পারবেন।")
 
 @dp.message(F.text == "📢 Channel Management")
 async def channel_menu(message: Message):
@@ -411,8 +411,8 @@ async def catch_all(message: Message):
         await message.answer(
             f"✅ {content_label} সংরক্ষণ হয়েছে।\n\n"
             "🔘 <b>Button Name</b> দিন।\n\n"
-            "Premium/custom emoji-এর ID সংরক্ষণ করতে চাইলে শেষে লিখতে পারেন:\n"
-            "<code>Website | 1234567890123456789</code>"
+            "চাইলে বাটনের নামের সাথে শুধুমাত্র সাধারণ ইমোজি ব্যবহার করতে পারেন:\n"
+            "<code>Website ✅</code>"
         )
         return
 
